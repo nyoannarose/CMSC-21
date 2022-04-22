@@ -1,25 +1,19 @@
-#include <math.h>
 #include <stdio.h>
- 
-// Function to find the square-root of N
-double findSQRT(double N) { return pow(2, 0.5 * log2(N)); }
- 
-// Driver Code
-int main()
+
+int main(void)
 {
-    int N;
+     float n, x, i;
 
-    printf("Enter a positive number: "); 
-    scanf("%d", &N);
+     printf("Enter the number: ");
+     scanf("%f", &x);
 
+     n = x/2;
 
-    if (N<0){
-    printf("Invalid Input");
-	}
-	
-	else{
-	printf("%f ", findSQRT(N));
-	}
- 
-    return 0;
+     for (i = 0; i < 100; i++)
+         n = n - (((n*n) - x)/(2*n));
+
+     printf("The square root of %.0f is %.4f.\n", x, n);
+
+     return 0;
+
 }
